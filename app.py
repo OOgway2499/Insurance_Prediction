@@ -34,3 +34,4 @@ if st.button("Predict Insurance Cost"):
     features = np.array([[age, gender_val, bmi, children, smoker_val, location_val]])
     prediction = model.predict(features)[0]
     st.success(f"Estimated Insurance Cost: ₹{round(prediction, 2)}")
+
