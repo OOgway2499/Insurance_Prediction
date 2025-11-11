@@ -1,0 +1,20 @@
+import joblib
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import GradientBoostingRegressor
+
+# Define features and target variable
+X = df_label_encoded.drop(columns="health_insurance_price")
+y = df_label_encoded["health_insurance_price"]
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Create and train the model
+model = GradientBoostingRegressor()
+model.fit(X_train, y_train)
+
+# Save the trained model
+joblib.dump(model, 'insurance_model.pkl')
+
+# Load the saved model (usually in a separate script or later time)
+model = joblib.load('insurance_model.pkl')
