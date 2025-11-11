@@ -18,3 +18,4 @@ joblib.dump(model, 'insurance_model.pkl')
 
 # Load the saved model (usually in a separate script or later time)
 model = joblib.load('insurance_model.pkl')
+
